@@ -1,6 +1,12 @@
 language: c
 
+services:
+  - docker
+
+before_install:
+  - docker pull ocaml/opam2
+  - docker run ocaml/opam2 bash -ex .travis-ci.sh
+
 script:
-  - sh -ex .travis-ci.sh
-# - bin/fetch-configlet
-# - bin/configlet lint .
+  - bin/fetch-configlet
+  - bin/configlet lint .

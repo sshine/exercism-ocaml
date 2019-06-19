@@ -1,15 +1,10 @@
 #!/bin/sh
 
-echo "yes" | sudo add-apt-repository ppa:avsm/ppa
-sudo apt -qq update
-sudo apt -qq install opam
+sudo apt install m4
 
 opam --version
-
-opam init -a
-eval $(opam env)
-opam install dune ocamlfind core base ounit qcheck react ppx_deriving
-
 ocaml -version
+
+opam install dune ocamlfind core base ounit qcheck react ppx_deriving
 
 make test
