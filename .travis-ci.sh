@@ -1,8 +1,8 @@
 #!/bin/sh
 
-echo "yes" | add-apt-repository ppa:avsm/ppa
-apt -qq update
-apt -qq install opam
+echo "yes" | sudo add-apt-repository ppa:avsm/ppa
+sudo apt -qq update
+sudo apt -qq install opam
 
 opam --version
 
