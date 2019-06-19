@@ -1,13 +1,6 @@
 language: c
 
 script:
-  - sudo apt update -qq
-  - sudo apt install -qq ocaml-nox opam
-  - ocaml -version
-  - opam --version
-  - opam init
-  - eval $(opam config env)
-  - opam install dune ocamlfind core base ounit qcheck react ppx_deriving
-  - make test
+  - sh -ex .travis-ci.sh
 # - bin/fetch-configlet
 # - bin/configlet lint .
